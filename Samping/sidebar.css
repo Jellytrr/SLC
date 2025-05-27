@@ -1,0 +1,161 @@
+
+
+/* Sidebar */
+.sidebar {
+    width: 170px;
+    height: 100vh;
+    background: linear-gradient(135deg, #104c75, #81d071); /* Gradien biru-hijau */
+    color: white;
+    position: fixed;
+    left: -250px;
+    transition: left 0.3s ease, transform 0.3s ease;
+    padding: 20px;
+    z-index: 1;
+    opacity: 0.95;
+    box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.1); /* Bayangan samping */
+}
+
+
+
+/* Sidebar ketika ditampilkan */
+.sidebar.show {
+    left: 0;
+    transform: translateX(0);
+}
+
+/* Judul dan Menu */
+.sidebar h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #ecf0f1;
+    margin-bottom: 40px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Menu List */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Menu Item */
+.sidebar ul li {
+    padding: 15px;
+    position: relative;
+    border-radius: 8px;
+    margin: 5px 0;
+    transition: background 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Efek hover pada item */
+.sidebar ul li:hover {
+    background: #2980b9;
+    transform: translateX(10px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Menambahkan space antara ikon dan teks */
+.sidebar ul li i {
+    margin-right: 15px; /* Memberikan jarak antara ikon dan teks */
+    font-size: 1.3rem; /* Ukuran ikon */
+}
+
+/* Link menu */
+.sidebar ul li a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    padding: 1px; /* supaya klik area penuh */
+}
+
+
+/* Efek hover pada link */
+.sidebar ul li:hover a {
+    color: #ffcc00;
+}
+
+/* Menu toggle untuk mobile */
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    background: #2980b9;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+}
+
+.circle:hover {
+    background: #3498db;
+}
+
+.hamburger {
+    width: 30px;
+    height: 3px;
+    background: white;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: white;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.hamburger::after {
+    top: 8px;
+}
+
+/* Responsif untuk mobile */
+@media (max-width: 768px) {
+    .sidebar {
+        left: -250px; /* Tersembunyi di mobile */
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Untuk mode desktop */
+@media (min-width: 769px) {
+    .sidebar {
+        left: 0; /* Sidebar muncul terus di desktop */
+    }
+    .menu-toggle {
+        display: none; /* Menyembunyikan hamburger di desktop */
+    }
+}
