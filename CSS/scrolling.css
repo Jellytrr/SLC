@@ -1,0 +1,57 @@
+.scrolling-box {
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to right, #2e6779, #0c2e8d);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  .scrolling-box::before,
+  .scrolling-box::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 100%;
+    background: yellow;
+    z-index: 2;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+  }
+  
+  .scrolling-box::after {
+    right: 0;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  }
+  
+  .scrolling-text {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    white-space: nowrap;
+    animation: scroll-left 25s linear infinite;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 3; /* Biar di atas garis kuning */
+  }
+  
+  .scrolling-text img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+  }
+  
+  @keyframes scroll-left {
+    0% {
+      left: 100%;
+    }
+    100% {
+      left: -100%;
+    }
+  }
+  

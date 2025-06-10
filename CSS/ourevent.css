@@ -1,0 +1,81 @@
+/* Section Styling */
+#ourevent {
+  padding: 60px 20px;
+}
+
+#ourevent h2 {
+  font-size: 36px;
+  color: #333;
+  text-align: center;
+  margin-left: 400px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Grid */
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .event-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Card */
+.event-box {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.event-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Image */
+.event-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay Text */
+.event-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  box-sizing: border-box;
+}
+
+.event-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .event-grid {
+    grid-template-columns: 1fr; /* One column on mobile */
+  }
+
+  .event-img {
+    height: 140px; /* Adjust image height for mobile */
+  }
+
+  #ourevent h2 {
+    margin-left: 0; /* Center-align heading properly on mobile */
+  }
+}
