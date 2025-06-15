@@ -1,0 +1,36 @@
+.centered-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+h4 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #ff6ec4, #7873f5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
+  animation: fadeInUp 1s ease-out forwards;
+  opacity: 0;
+  margin: 0; /* remove margin-left */
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  h4 {
+    font-size: 2.2rem;
+  }
+}
